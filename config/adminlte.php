@@ -329,7 +329,7 @@ return [
                 ],
                 [
                     'text' => 'créer',
-                    'url'  => 'admin/epmloyes/create',
+                    'url'  => 'admin/employes/create',
                     'icon'    => 'fas fa-fw fa-user-plus',
                 ],
             ],
@@ -372,27 +372,27 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js',
+                    'asset' => true,
+                    'location' => 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => 'https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js',
+                    'asset' => true,
+                    'location' => 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => 'https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js',
+                    'asset' => true,
+                    'location' => 'https://cdn.datatables.net/v/bs4/dt-1.10.24/b-1.7.0/b-colvis-1.7.0/b-html5-1.7.0/b-print-1.7.0/r-2.2.7/datatables.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => 'https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css',
+                    'asset' => true,
+                    'location' => 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css',
                 ],
             ],
         ],

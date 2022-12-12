@@ -11,6 +11,7 @@
     <title>@yield('title')</title>
   </head>
   <body class="bg-light">
+    @include('layouts.alert')
     @yield('content')
 
     <!-- Optional JavaScript; choose one of the two! -->

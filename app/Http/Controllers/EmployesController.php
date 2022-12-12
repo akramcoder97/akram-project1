@@ -28,7 +28,7 @@ class EmployesController extends Controller
      */
     public function create()
     {
-        //
+        return view('employes.create');
     }
 
     /**
@@ -40,6 +40,42 @@ class EmployesController extends Controller
     public function store(Request $request)
     {
         //
+         $this->validate($request, [
+            'registration_number' => 'required|numeric',
+            'full_name' => 'required',
+            'depart'    => 'required',
+            'hire_date' => 'required',
+            'phone'     => 'required',
+            'address'   => 'required',
+            'city'      => 'required',
+        ]);
+
+        /*Employe::create($request->except('_token'));
+        return redirect()->route('employes.index')->with([
+            'success' => 'employe added suuccefully' 
+        ]);
+
+         Employe::create($request->except(['_token']));
+        return redirect()->route("employes.index")->with([
+            "success" => "Employe added successfully"
+        ]);   */
+
+        $employe = new Employe();
+
+        $employe->registration_number = $request->input('registration_number');
+        $employe->full_name      = $request->input('full_name');
+        $employe->depart         = $request->input('depart');
+        $employe->hire_date      = $request->input('hire_date');
+        $employe->phone          = $request->input('phone');
+        $employe->address        = $request->input('address');
+        $employe->city           = $request->input('city');
+
+        $save = $employe->save();
+        if($save){
+            return redirect()->route("employes.index")->with([
+                "success" => "Employe added successfully"
+            ]);
+        }
     }
 
     /**
